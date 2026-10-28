@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>หน้าเว็บแรกของฉัน</title>
+    <style>
+        body {
+            background-color: #e9ecef;   /* พื้นหลังหน้า */
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;     /* กึ่งกลางแนวนอน */
+            align-items: center;         /* กึ่งกลางแนวตั้ง */
+            font-family: sans-serif;
+        }
+        p { /* เลือกทุก Tag <p> */
+            color: rgb(14, 12, 12);
+        }
+        .card { /* การ์ดใบเดียวที่ครอบทั้งหมด */
+            background-color: rgb(167, 149, 149);   /* ต่างจากพื้นหลังหน้า */
+            padding: 24px;
+            border-radius: 16px;                     /* ขอบมน */
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25); /* เงา */
+        }
+        #title { /* เลือก Tag ที่มี id="title" (ขึ้นต้นด้วย #) */
+            font-size: 24px;
+        }
+        .row {
+            display: flex;
+            gap: 20px; /* ช่องว่างระหว่างกล่องลูก */
+            align-items: center; /* จัดกึ่งกลางตามแนวตั้ง */
+        }
+        /* ปุ่มเพิ่ม */
+        #btn_add {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+        #btn_add:hover {
+            background-color: #43a047;
+        }
+        #btn_add:active {
+            transform: scale(0.95);
+        }
+        
+        /* ปุ่มลบ */
+        #container button {
+            background-color: #e53935;
+            color: white;
+            border: none;
+            padding: 4px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 12px;
+            margin-left: 10px;
+            transition: background-color 0.2s, transform 0.1s;
+        }
+        #container button:hover {
+            background-color: #c62828;
+        }
+        #container button:active {
+            transform: scale(0.95);
+        }
+        
+        /* ช่องพิมพ์ (ให้เข้ากับปุ่ม) */
+        #input_name {
+            padding: 8px 10px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+        }
+        #input_name:focus {
+            border-color: #4caf50;
+        }
+        
+        /* รายการ */
+        #container li {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="row">
+            <!-- ซ้าย -->
+            <div class="profile">
+                <!-- รูป ชื่อ รหัสนักศึกษา แนะนำตัว ลิงก์ -->
+                <img src="images.jpg" alt="cat" width="250" height="250">
+                <h1 id="title">Whitthawat Jirapron</h1>
+                <p>69070189 IT KMITL</p>
+                <p>I'm Tee</p>
+                <a href="https://www.facebook.com/whitthawat336">contact</a>
+            </div>
+
+            <!-- ขวา -->
+            <div class="todo">
+                <!-- หัวข้อ ช่องพิมพ์ ปุ่มเพิ่ม และรายการ To-do (แต่ละข้อมีปุ่มลบ) -->
+                <h2>To-do List</h2>
+                <input type="text" placeholder="เพิ่มสิ่งที่ต้องทำ" id="input_name">
+                <button id="btn_add">เพิ่ม</button>
+                <ul id="container">
+                    <!-- <li id="list-1">sleep <button onclick="deleteList(1, 'sleep')">ลบ</button></li>
+                    <li id="list-2">breakfast <button onclick="deleteList(2, 'breakfast')">ลบ</button></li>
+                    <li id="list-3">lunch <button onclick="deleteList(3, 'lunch')">ลบ</button></li>
+                    <li id="list-4">sleep <button onclick="deleteList(4, 'sleep')">ลบ</button></li> -->
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
